@@ -222,6 +222,288 @@ body{overflow-x:clip}
   .hero-shell{min-height:465px}.hero-visual,.hero-copy{min-height:465px}
 }
 @media(prefers-reduced-motion:reduce){.product-card:hover{transform:none}.btn:hover{transform:none}}
+
+
+/* =========================================================
+   EXPERIÊNCIA RANGO — hambúrguer montado pelo scroll
+   Integrada ao visual Velho Oeste e otimizada para mobile.
+   ========================================================= */
+.rango-scroll-experience{
+  --rs-gold:#e7a54e;
+  --rs-rust:#a74327;
+  --rs-cream:#fff1d7;
+  --rs-muted:#bda98e;
+  position:relative;
+  height:260vh;
+  background:#1e130c;
+  border-block:1px solid #6a442d;
+  scroll-margin-top:78px;
+}
+.rango-scroll-sticky{
+  position:sticky;
+  top:78px;
+  height:calc(100svh - 78px);
+  min-height:560px;
+  overflow:hidden;
+  isolation:isolate;
+  color:var(--rs-cream);
+  background:
+    radial-gradient(circle at 50% 47%,rgba(231,165,78,.10),transparent 27%),
+    linear-gradient(180deg,#24160e 0%,#160e09 100%);
+}
+.rango-scroll-sticky:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.13;
+  background-image:
+    repeating-linear-gradient(0deg,transparent 0 6px,rgba(255,255,255,.018) 7px),
+    radial-gradient(circle at 18% 20%,rgba(255,255,255,.05),transparent 18%);
+  z-index:-1;
+}
+.rango-scroll-bgword{
+  position:absolute;
+  left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  font:900 min(29vw,410px)/1 var(--display);
+  letter-spacing:-.06em;
+  color:rgba(255,241,215,.025);
+  user-select:none;
+  pointer-events:none;
+  white-space:nowrap;
+}
+.rango-scroll-copy{
+  position:absolute;
+  left:max(28px,6vw);
+  top:50%;
+  transform:translateY(-50%);
+  width:min(330px,27vw);
+  z-index:14;
+}
+.rango-scroll-kicker{
+  margin:0 0 12px;
+  color:var(--rs-gold);
+  font:900 11px/1 var(--display);
+  letter-spacing:.19em;
+  text-transform:uppercase;
+}
+.rango-scroll-copy h2{
+  margin:0 0 16px;
+  font:900 clamp(48px,5.3vw,86px)/.88 var(--display);
+  letter-spacing:.01em;
+  text-transform:uppercase;
+  color:#fff1d7;
+}
+.rango-scroll-copy h2 span{color:var(--rs-gold)}
+.rango-scroll-copy-text{
+  min-height:62px;
+  margin:0;
+  max-width:285px;
+  color:#c5b39a;
+  font-size:13px;
+  line-height:1.62;
+}
+.rango-scroll-scene{
+  position:absolute;
+  left:50%;top:52%;
+  width:min(720px,45vw);
+  height:min(720px,45vw);
+  transform:translate(-50%,-50%);
+  z-index:9;
+}
+.rango-scroll-ground{
+  position:absolute;
+  left:50%;bottom:5.5%;
+  width:58%;height:7%;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:rgba(0,0,0,.58);
+  filter:blur(11px);
+}
+.rango-scroll-warmth{
+  position:absolute;
+  left:50%;bottom:4%;
+  width:64%;height:12%;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(231,165,78,.18),transparent 70%);
+}
+.rango-scroll-layer,.rango-scroll-full{
+  position:absolute;
+  left:50%;
+  user-select:none;
+  pointer-events:none;
+}
+.rango-scroll-layer{
+  transform:translate(-50%,-50%);
+  will-change:transform,opacity;
+  filter:drop-shadow(0 10px 12px rgba(0,0,0,.20));
+}
+.rango-scroll-bottom{top:79%;width:64%}
+.rango-scroll-patty{top:68.5%;width:65%}
+.rango-scroll-cheese{top:60.2%;width:63%}
+.rango-scroll-lettuce{top:53.4%;width:67%}
+.rango-scroll-onion{top:45.8%;width:61%}
+.rango-scroll-sauce{top:41.8%;width:59%}
+.rango-scroll-top{top:29.4%;width:68%}
+.rango-scroll-full{
+  top:51.1%;
+  width:70%;
+  transform:translate(-50%,-50%) scale(.992);
+  opacity:0;
+  z-index:12;
+  filter:drop-shadow(0 16px 18px rgba(0,0,0,.24));
+}
+.rango-scroll-side{
+  position:absolute;
+  right:max(28px,5vw);
+  top:50%;
+  transform:translateY(-50%);
+  width:190px;
+  z-index:14;
+}
+.rango-scroll-percent{
+  font:900 42px/1 var(--display);
+  color:#fff2d5;
+}
+.rango-scroll-percent span{color:var(--rs-gold)}
+.rango-scroll-progress{
+  width:100%;height:2px;
+  margin:13px 0 8px;
+  background:#7a583b66;
+}
+.rango-scroll-progress i{
+  display:block;height:100%;width:0;
+  background:linear-gradient(90deg,var(--rs-rust),var(--rs-gold));
+}
+.rango-scroll-side small{
+  color:#aa9478;
+  font:800 8px/1 var(--display);
+  letter-spacing:.18em;
+}
+.rango-scroll-list{
+  display:grid;
+  gap:10px;
+  margin-top:30px;
+}
+.rango-scroll-list span{
+  color:#796a59;
+  font:800 10px/1 var(--display);
+  letter-spacing:.10em;
+  text-transform:uppercase;
+  transition:color .18s,transform .18s;
+}
+.rango-scroll-list span.is-active{color:#fff0d4;transform:translateX(-7px)}
+.rango-scroll-list span.is-done{color:var(--rs-gold)}
+.rango-scroll-hint{
+  position:absolute;
+  left:50%;bottom:22px;
+  transform:translateX(-50%);
+  color:#86735f;
+  font:800 9px/1 var(--display);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.rango-scroll-skip{
+  position:absolute;
+  left:50%;top:16px;
+  transform:translateX(-50%);
+  z-index:20;
+  color:#bba78d;
+  font-size:11px;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+.rango-scroll-finish{
+  position:absolute;
+  left:50%;bottom:54px;
+  transform:translateX(-50%) translateY(12px);
+  z-index:16;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .16s,transform .16s;
+}
+.rango-scroll-finish.is-visible{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+  pointer-events:auto;
+}
+.rango-scroll-finish strong{
+  white-space:nowrap;
+  font:900 16px/1 var(--display);
+  letter-spacing:.06em;
+  color:#fff1d7;
+}
+.rango-scroll-finish a{
+  min-height:43px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 16px;
+  border-radius:8px;
+  background:linear-gradient(160deg,#f9bf6a,#e09a43);
+  color:#281709;
+  box-shadow:0 3px 0 #915a2c;
+  font:900 13px/1 var(--display);
+  letter-spacing:.07em;
+}
+
+@media(max-width:899px){
+  .rango-scroll-experience{height:240vh;scroll-margin-top:62px}
+  .rango-scroll-sticky{top:62px;height:calc(100svh - 62px);min-height:520px}
+  .rango-scroll-copy{left:22px;width:33vw}
+  .rango-scroll-side{right:20px;width:145px}
+  .rango-scroll-scene{width:min(76vw,660px);height:min(76vw,660px)}
+}
+@media(max-width:599px){
+  .rango-scroll-experience{height:220vh;margin-inline:0}
+  .rango-scroll-sticky{top:62px;height:calc(100svh - 62px);min-height:510px}
+  .rango-scroll-bgword{font-size:43vw}
+  .rango-scroll-skip{top:10px;font-size:10px}
+  .rango-scroll-copy{
+    top:62px;left:16px;right:16px;
+    width:auto;transform:none;
+  }
+  .rango-scroll-kicker{font-size:10px;margin-bottom:7px}
+  .rango-scroll-copy h2{font-size:39px;line-height:.91;margin-bottom:7px;max-width:210px}
+  .rango-scroll-copy-text{font-size:11px;line-height:1.42;min-height:43px;max-width:225px}
+  .rango-scroll-scene{top:56%;width:106vw;height:106vw}
+  .rango-scroll-side{
+    top:auto;right:15px;bottom:55px;
+    width:126px;transform:none;
+  }
+  .rango-scroll-percent{font-size:29px}
+  .rango-scroll-list{display:none}
+  .rango-scroll-hint{bottom:16px;font-size:8px}
+  .rango-scroll-finish{
+    left:16px;right:16px;bottom:54px;
+    transform:translateY(10px);
+    justify-content:flex-start;
+  }
+  .rango-scroll-finish.is-visible{transform:translateY(0)}
+  .rango-scroll-finish strong{font-size:14px}
+  .rango-scroll-finish a{min-height:40px;font-size:12px;padding:9px 13px}
+}
+@media(max-width:359px){
+  .rango-scroll-copy h2{font-size:35px}
+  .rango-scroll-copy-text{font-size:10.5px}
+  .rango-scroll-scene{top:57%;width:110vw;height:110vw}
+  .rango-scroll-side{bottom:50px}
+}
+@media(prefers-reduced-motion:reduce){
+  .rango-scroll-experience{height:auto}
+  .rango-scroll-sticky{position:relative;top:auto;height:660px;min-height:0}
+  .rango-scroll-layer{display:none}
+  .rango-scroll-full{opacity:1}
+  .rango-scroll-finish{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}
+  .rango-scroll-side{display:none}
+  .rango-scroll-hint{display:none}
+}
 </style>
 <link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&amp;family=DM+Sans:wght@400;500;600;700;800&amp;family=Roboto+Slab:wght@700;800&amp;display=swap" rel="stylesheet"/><meta content="assets/hero-sunset.webp" property="og:image"/></head>
 <body>
@@ -230,7 +512,7 @@ body{overflow-x:clip}
 <header class="site-header" id="topo">
 <div class="container header-body">
 <a aria-label="Rango Lanches, voltar ao início" class="brand" href="#topo"><span aria-hidden="true" class="brand-mark">✴</span><span class="brand-text"><strong>RANGO</strong><small>LANCHES <span>✦ DESDE O VELHO OESTE ✦</span></small></span></a>
-<nav aria-label="Navegação principal" class="desktop-nav"><a href="#cardapio">Cardápio</a><a href="#sobre">Nosso território</a><a href="#como-funciona">Como pedir</a><a aria-label="Falar com Rango Lanches pelo WhatsApp" href="https://wa.me/5518991381163?text=Ol%C3%A1%2C%20Rango%20Lanches%21%20Gostaria%20de%20fazer%20um%20pedido." referrerpolicy="no-referrer" rel="noopener noreferrer" target="_blank">WhatsApp ↗</a></nav>
+<nav aria-label="Navegação principal" class="desktop-nav"><a href="#experiencia-rango">Experiência</a><a href="#cardapio">Cardápio</a><a href="#sobre">Nosso território</a><a href="#como-funciona">Como pedir</a><a aria-label="Falar com Rango Lanches pelo WhatsApp" href="https://wa.me/5518991381163?text=Ol%C3%A1%2C%20Rango%20Lanches%21%20Gostaria%20de%20fazer%20um%20pedido." referrerpolicy="no-referrer" rel="noopener noreferrer" target="_blank">WhatsApp ↗</a></nav>
 <div class="header-tools"><a aria-label="Falar com a Rango Lanches pelo WhatsApp" class="header-whatsapp" href="https://wa.me/5518991381163?text=Ol%C3%A1%2C%20Rango%20Lanches%21" rel="noopener noreferrer" target="_blank" title="WhatsApp da lanchonete">☎</a>
 <button aria-label="Pesquisar produtos" class="tool-button" id="search-open" title="Pesquisar produtos" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.6"></circle><path d="m16 16 5 5"></path></svg></button>
 <button aria-label="Abrir carrinho" class="tool-button cart-tool" id="cart-open" title="Abrir carrinho" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 4h2.2l2 11h11.1l2.2-8H6"></path><circle cx="9" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg><span class="cart-bubble" hidden="" id="header-count">0</span></button>
@@ -246,6 +528,53 @@ body{overflow-x:clip}
 </div>
 </section>
 <section aria-label="Facilidades da demonstração" class="perks container"><div class="perk"><span class="perk-icon">★</span><div><strong>20 lanches</strong><small>Fotos feitas para este cardápio</small></div></div><div class="perk"><span class="perk-icon">⚡</span><div><strong>Sem cadastro</strong><small>Monte seu pedido rapidamente</small></div></div><div class="perk"><span class="perk-icon">✦</span><div><strong>Do seu jeito</strong><small>Personalize e envie pelo WhatsApp</small></div></div></section>
+
+<section aria-labelledby="rango-scroll-title" class="rango-scroll-experience" id="experiencia-rango">
+  <div class="rango-scroll-sticky">
+    <a class="rango-scroll-skip" href="#cardapio">Pular experiência e ir ao cardápio</a>
+    <div aria-hidden="true" class="rango-scroll-bgword">RANGO</div>
+
+    <div class="rango-scroll-copy">
+      <p class="rango-scroll-kicker" id="rango-scroll-kicker">✦ PASSO 01 · DIRETO DO SALOON</p>
+      <h2 id="rango-scroll-title">PÃO <span>BRIOCHE</span></h2>
+      <p class="rango-scroll-copy-text" id="rango-scroll-text">A base dourada chega primeiro. Continue rolando para montar o rango.</p>
+    </div>
+
+    <div aria-label="Hambúrguer sendo montado conforme a rolagem" class="rango-scroll-scene" id="rango-scroll-scene" role="img">
+      <div aria-hidden="true" class="rango-scroll-warmth"></div>
+      <div aria-hidden="true" class="rango-scroll-ground"></div>
+      <img alt="" aria-hidden="true" class="rango-scroll-layer rango-scroll-bottom" data-rango-layer="1" decoding="async" src="assets/burger-scroll/bottom_bun.webp"/>
+      <img alt="" aria-hidden="true" class="rango-scroll-layer rango-scroll-patty" data-rango-layer="2" decoding="async" src="assets/burger-scroll/patty.webp"/>
+      <img alt="" aria-hidden="true" class="rango-scroll-layer rango-scroll-cheese" data-rango-layer="3" decoding="async" src="assets/burger-scroll/cheese.webp"/>
+      <img alt="" aria-hidden="true" class="rango-scroll-layer rango-scroll-lettuce" data-rango-layer="4" decoding="async" src="assets/burger-scroll/lettuce.webp"/>
+      <img alt="" aria-hidden="true" class="rango-scroll-layer rango-scroll-onion" data-rango-layer="5" decoding="async" src="assets/burger-scroll/onion.webp"/>
+      <img alt="" aria-hidden="true" class="rango-scroll-layer rango-scroll-sauce" data-rango-layer="6" decoding="async" src="assets/burger-scroll/sauce.webp"/>
+      <img alt="" aria-hidden="true" class="rango-scroll-layer rango-scroll-top" data-rango-layer="7" decoding="async" src="assets/burger-scroll/top_bun.webp"/>
+      <img alt="" aria-hidden="true" class="rango-scroll-full" decoding="async" id="rango-scroll-full" src="assets/burger-scroll/full_burger.webp"/>
+    </div>
+
+    <div class="rango-scroll-side">
+      <div class="rango-scroll-percent"><span id="rango-scroll-value">00</span>%</div>
+      <div aria-hidden="true" class="rango-scroll-progress"><i id="rango-scroll-line"></i></div>
+      <small>MONTANDO SEU RANGO</small>
+      <div aria-hidden="true" class="rango-scroll-list" id="rango-scroll-list">
+        <span>BRIOCHE</span>
+        <span>BLEND</span>
+        <span>CHEDDAR</span>
+        <span>ALFACE</span>
+        <span>CEBOLA ROXA</span>
+        <span>MOLHO DA CASA</span>
+        <span>FINALIZAÇÃO</span>
+      </div>
+    </div>
+
+    <div aria-live="polite" class="rango-scroll-finish" id="rango-scroll-finish">
+      <strong>RANGO PRONTO.</strong>
+      <a href="#cardapio">ESCOLHER MEU LANCHE ↗</a>
+    </div>
+    <div aria-hidden="true" class="rango-scroll-hint">ROLE PARA MONTAR ↓</div>
+  </div>
+</section>
 <section class="catalog container" id="cardapio">
 <div class="catalog-lead"><div><p class="overline">✦ DIRETO DO NOSSO SALOON</p><h2><span class="catalog-desktop-heading">O CARDÁPIO <span class="accent">MAIS PROCURADO.</span></span><span class="catalog-mobile-heading">ESCOLHA SEU <span class="accent">RANGO.</span></span></h2><p class="catalog-desc"><span class="desc-desktop">20 lanches, quatro categorias e uma fome sem fronteiras. Escolha seu território.</span><span class="desc-mobile">20 lanches • 4 categorias • monte do seu jeito</span></p></div><div aria-hidden="true" class="seal"><strong>20</strong><span>LANCHES</span><small>✦</small></div></div>
 <nav aria-label="Filtrar categorias" class="category-scroll" id="category-scroll"><div class="category-inner" id="categories"><a class="cat-button" href="#cardapio">✦ TODOS <small>20</small></a><a class="cat-button" href="#group-x"><span class="cat-emoji">🍔</span> X TRADICIONAIS <small>8</small></a><a class="cat-button" href="#group-hot"><span class="cat-emoji">🌭</span> HOT DOGS <small>5</small></a><a class="cat-button" href="#group-smash"><span class="cat-emoji">🔥</span> SMASH <small>5</small></a><a class="cat-button" href="#group-frango"><span class="cat-emoji">🍗</span> FRANGO <small>2</small></a></div></nav>
@@ -504,5 +833,112 @@ window.RANGO_DATA = {
   const previewNotice=$('#js-status'); if(previewNotice) previewNotice.hidden=true;
 })();
 
-</script></body>
+</script>
+<script>
+(() => {
+  const experience = document.getElementById('experiencia-rango');
+  if (!experience || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const scene = document.getElementById('rango-scroll-scene');
+  const layers = [...experience.querySelectorAll('[data-rango-layer]')];
+  const full = document.getElementById('rango-scroll-full');
+  const value = document.getElementById('rango-scroll-value');
+  const line = document.getElementById('rango-scroll-line');
+  const kicker = document.getElementById('rango-scroll-kicker');
+  const title = document.getElementById('rango-scroll-title');
+  const copyText = document.getElementById('rango-scroll-text');
+  const labels = [...experience.querySelectorAll('#rango-scroll-list span')];
+  const finish = document.getElementById('rango-scroll-finish');
+
+  const steps = [
+    ['✦ PASSO 01 · DIRETO DO SALOON','PÃO <span>BRIOCHE</span>','A base dourada chega primeiro. Continue rolando para montar o rango.'],
+    ['✦ PASSO 02 · CHAPA QUENTE','BLEND <span>SUCULENTO</span>','A carne entra com crosta marcada e aparência de chapa quente.'],
+    ['✦ PASSO 03 · SEM ECONOMIA','CHEDDAR <span>DERRETIDO</span>','Queijo quente desce sobre o blend e começa a unir as camadas.'],
+    ['✦ PASSO 04 · FRESCOR','ALFACE <span>CROCANTE</span>','Folhas frescas entram para trazer volume, textura e contraste.'],
+    ['✦ PASSO 05 · CONTRASTE','CEBOLA <span>ROXA</span>','As rodelas acrescentam cor e crocância ao rango.'],
+    ['✦ PASSO 06 · ASSINATURA','MOLHO <span>DA CASA</span>','O molho especial fecha o recheio antes do pão superior.'],
+    ['✦ PASSO 07 · RECOMPENSA','RANGO <span>PRONTO.</span>','As camadas se encontram e o lanche fica pronto para escolher no cardápio.']
+  ];
+
+  const cfg = {
+    1:{start:.00,from:150,rot:-2,scale:.986},
+    2:{start:.10,from:-235,rot:5,scale:1.04},
+    3:{start:.24,from:-285,rot:-5,scale:1.05},
+    4:{start:.38,from:-325,rot:5,scale:1.055},
+    5:{start:.52,from:-370,rot:-6,scale:1.05},
+    6:{start:.66,from:-410,rot:4,scale:1.04},
+    7:{start:.80,from:-520,rot:-4,scale:1.07}
+  };
+
+  const clamp=(n,a,b)=>Math.min(Math.max(n,a),b);
+  const lerp=(a,b,t)=>a+(b-a)*t;
+  const ease=t=>t*t*(3-2*t);
+  let ticking=false;
+  let currentStep=-1;
+
+  function getProgress(){
+    const r=experience.getBoundingClientRect();
+    const sticky=experience.querySelector('.rango-scroll-sticky');
+    const scrollable=Math.max(1, experience.offsetHeight - sticky.offsetHeight);
+    return clamp((-r.top)/scrollable,0,1);
+  }
+
+  function render(){
+    ticking=false;
+    const p=getProgress();
+    const pct=Math.round(p*100);
+    value.textContent=String(pct).padStart(2,'0');
+    line.style.width=pct+'%';
+
+    const settle=ease(clamp((p-.86)/.12,0,1));
+    scene.style.transform=`translate(-50%, calc(-50% + ${lerp(0,2,settle)}px))`;
+
+    // A transição para a imagem completa só acontece no fim.
+    // Até lá, são as próprias camadas que se encostam.
+    const finalBlend=ease(clamp((p-.965)/.028,0,1));
+    const press=ease(clamp((p-.88)/.08,0,1));
+    const pressShift={1:0,2:7,3:10,4:9,5:7,6:6,7:13};
+
+    layers.forEach(el=>{
+      const id=Number(el.dataset.rangoLayer);
+      const c=cfg[id];
+      const t=ease(clamp((p-c.start)/.15,0,1));
+      const y=lerp(c.from,0,t)+(pressShift[id]||0)*press;
+      const rot=lerp(c.rot,0,t);
+      const scale=lerp(c.scale,1,t);
+      el.style.transform=`translate(-50%,-50%) translateY(${y}px) rotate(${rot}deg) scale(${scale})`;
+      el.style.opacity=(clamp(t*1.2,0,1)*(1-finalBlend)).toFixed(3);
+    });
+
+    full.style.opacity=finalBlend.toFixed(3);
+    full.style.transform=`translate(-50%,-50%) scale(${lerp(.988,1,finalBlend)})`;
+    finish.classList.toggle('is-visible', p>.965);
+
+    const step=clamp(Math.floor(p*7),0,6);
+    if(step!==currentStep){
+      currentStep=step;
+      kicker.textContent=steps[step][0];
+      title.innerHTML=steps[step][1];
+      copyText.textContent=steps[step][2];
+      labels.forEach((el,i)=>{
+        el.classList.toggle('is-active',i===step);
+        el.classList.toggle('is-done',i<step);
+      });
+    }
+  }
+
+  function requestRender(){
+    if(!ticking){
+      ticking=true;
+      requestAnimationFrame(render);
+    }
+  }
+
+  addEventListener('scroll',requestRender,{passive:true});
+  addEventListener('resize',requestRender,{passive:true});
+  addEventListener('load',requestRender,{once:true});
+  render();
+})();
+</script>
+</body>
 </html>
